@@ -23,8 +23,7 @@ x_test = funcs.pre_treatment(x_test)
 #   对数据进行标记
 x_train_with_lable = list(funcs.lable_reviews(x_train, train_labels))
 x_test_with_lable = list(funcs.lable_reviews(x_test, test_labels))
-all_train = x_train_with_lable.copy()
-all_train.extend(x_test_with_lable)
+all_train = x_train_with_lable.copy().extend(x_test_with_lable)
 
 #   初始化模型
 dm = Doc2Vec(vector_size=100, min_count=5, window=10, alpha=0.05, negative=5, epochs=10, dm=1)
